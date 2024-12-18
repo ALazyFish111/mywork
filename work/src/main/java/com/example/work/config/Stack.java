@@ -1,4 +1,4 @@
 package com.example.work.config;
 
-public class MyArrayList {
+public class Stack {
 }
