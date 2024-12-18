@@ -22,4 +22,8 @@ public class LoginController {
             return "账号或密码有误";
         }
     }
+//    @RequestMapping("/login")
+//    public String login(){
+//        return "1111";
+//    }
 }

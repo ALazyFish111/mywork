@@ -1,4 +1,4 @@
 package com.example.work.config;
 
-public class List {
+public class MyStack {
 }
