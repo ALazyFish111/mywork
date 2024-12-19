@@ -1,7 +1,7 @@
 <template>
-  <ContentBase>
-    这是我的第一个页面
-  </ContentBase>
+    <ContentBase>
+        这是我的5
+    </ContentBase>
 </template>
 
 <script setup>
