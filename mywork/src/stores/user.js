@@ -1,11 +1,10 @@
 import { defineStore } from "pinia";
 import { ref, reactive } from "vue";
 import apiClient from "@/services/api";
-import router from "@/router";
+// import router from "@/router";
 
 export const useUserStore = defineStore('user', () => {
     let user = reactive({
-        // id: 0,
         username: '',
         password: '',
         role: '',
@@ -29,12 +28,14 @@ export const useUserStore = defineStore('user', () => {
     const register = async () => {
         try {
             const exists = await register_check();
+            console.log(exists);
             if (!exists) {
                 alert('注册失败，该账号已存在');
             } else {
-                const response = await apiClient.post('/register',
+                const response = await apiClient.post('/register_add',
                     useUserStore.user
                 );
+                alert('注册成功');
                 console.log(response.data);
             }
         } catch (error) {
@@ -62,7 +63,6 @@ export const useUserStore = defineStore('user', () => {
                 alert('账号或密码输入有误');
             } else {
                 hasbeen = true;
-                router.push('/home');
             }
         } catch (error) {
             console.log(error);

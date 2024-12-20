@@ -20,6 +20,9 @@
                 <div class="text-center mt-3">
                     <router-link class="text-muted" :to="{ name: 'register' }">立即注册</router-link>
                 </div>
+                <div class="text-center mt-3">
+                    <router-link class="text-muted" :to="{ name: 'home' }">跳转到首页</router-link>
+                </div>
             </div>
         </div>
     </ContentBase>

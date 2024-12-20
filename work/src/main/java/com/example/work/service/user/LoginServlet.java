@@ -1,4 +1,4 @@
-package com.example.work.service;
+package com.example.work.service.user;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.example.work.entity.myuser.Users;
@@ -16,6 +16,7 @@ public class LoginServlet {
         queryWrapper.eq("username",username);
 
         Users users = usersMapper.selectOne(queryWrapper);
+        System.out.println(users);
         if(users == null || (users.getPassword()).equals(password) == false){
             return false;
         }

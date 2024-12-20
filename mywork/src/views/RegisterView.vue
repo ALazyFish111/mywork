@@ -43,7 +43,9 @@ const tmp = reactive({
 })
 let msg = true;
 const check1 = () => {
-    if (repassword == tmp.password) {
+    console.log(repassword);
+    console.log(tmp.password);
+    if (repassword.trim() !== tmp.password.trim()) {
         console.log('信息有误');
         msg = false;
         alert('信息有误');
