@@ -20,11 +20,21 @@ public class LoginController {
     public Map<String,Boolean> login_check(@RequestBody Users user){
         System.out.println(user.getUsername() +" " + user.getPassword());
         System.out.println(user);
-        boolean exists = loginServlet.login(user.getUsername(), user.getPassword());
+        boolean exists;
+        Users users = loginServlet.login(user.getUsername(), user.getPassword());
+        if(users == null)exists =false;
+        else exists = true;
         Map<String,Boolean>response = new HashMap<String, Boolean>() ;
         response.put("exists",exists);
         System.out.println(exists);
         return response;
     }
-
+    @PostMapping("/login")
+    public String login(@RequestBody Users user){
+        System.out.println(user.getUsername() +" " + user.getPassword());
+        System.out.println(user);
+        Users users = loginServlet.login(user.getUsername(), user.getPassword());
+        System.out.println(users.getRole());
+        return users.getRole();
+    }
 }

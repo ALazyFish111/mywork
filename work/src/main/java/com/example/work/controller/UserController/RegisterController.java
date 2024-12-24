@@ -16,9 +16,9 @@ public class RegisterController {
     private RegisterServlet registerServlet;
 
     @PostMapping("/register_check")
-    public Map<String,Boolean> register_check(@RequestBody String username){
-        System.out.println(username);
-        boolean exists = registerServlet.register_check(username);
+    public Map<String,Boolean> register_check(@RequestBody(required = false) Users users){
+        System.out.println(users);
+        boolean exists = registerServlet.register_check(users.getUsername());
         Map<String,Boolean>response = new HashMap<String, Boolean>() ;
         response.put("exists",exists);
         System.out.println(exists);
@@ -26,7 +26,8 @@ public class RegisterController {
     }
     @PostMapping("/register_add")
     public String register_add(@RequestBody Users users){
-        System.out.println(users.getUsername() + " " + users.getPassword());
+        System.out.println(users);
+//        System.out.println(users.getUsername() + " " + users.getPassword());
         String reslut = registerServlet.add(users);
         System.out.println(reslut);
         return reslut;

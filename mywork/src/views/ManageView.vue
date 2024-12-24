@@ -1,11 +1,17 @@
 <template>
+
     <ContentBase>
-        这是我的3
+        <AddMenuView></AddMenuView>
+    </ContentBase>
+    <ContentBase>
+        <DeletemenuView></DeletemenuView>
     </ContentBase>
 </template>
 
 <script setup>
-
 import ContentBase from '@/components/ContentBase.vue';
+import AddMenuView from './AddmenuView.vue';
+import DeletemenuView from './DeletemenuView.vue';
 </script>
-<style scoped></style>
+
+<style></style>

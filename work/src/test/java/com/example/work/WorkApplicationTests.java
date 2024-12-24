@@ -4,9 +4,11 @@ import com.example.work.config.MyArrayList;
 import com.example.work.config.MyLinkedList;
 import com.example.work.entity.mymenu.Dish;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.Date;
+import java.util.List;
 import java.util.PriorityQueue;
 
 @SpringBootTest
@@ -32,5 +34,14 @@ class WorkApplicationTests {
             myLinkedList.addLast(i);
         }
     }
+    @Autowired
+    private DishServlet111 dishServlet111;
+    @Test
+    void test3(){
+        List<Dish>list = dishServlet111.findbylikename("辣椒");
+    }
 
+    void test4(){
+
+    }
 }

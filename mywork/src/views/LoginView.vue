@@ -26,6 +26,7 @@
             </div>
         </div>
     </ContentBase>
+    <!-- <p>{{ userStore.hasbeen }}</p> -->
 </template>
 
 <script setup>

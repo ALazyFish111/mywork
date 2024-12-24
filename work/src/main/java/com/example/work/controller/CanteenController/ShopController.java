@@ -13,21 +13,21 @@ import org.springframework.web.bind.annotation.RestController;
 @CrossOrigin(origins = "*")
 @RequestMapping("/canteen")
 public class ShopController {
-    @Autowired
-    private DishServlet dishServlet;
-    private MyLinkedList<Dish> myLinkedList = new MyLinkedList<>();
-    @RequestMapping("/shop/{id}/{windowid}/{canteenid}")
-    public String shop(@PathVariable int id,@PathVariable int windowid,@PathVariable int canteenid){
-        Dish dish = dishServlet.findbyid(id,windowid,canteenid);
-        myLinkedList.addLast(dish);
-        System.out.println(myLinkedList.toString());
-        return "成功添加";
-    }
+//    @Autowired
+//    private DishServlet dishServlet;
+//    private MyLinkedList<Dish> myLinkedList = new MyLinkedList<>();
+//    @RequestMapping("/shop/{id}/{windowid}/{canteenid}")
+//    public String shop(@PathVariable int id,@PathVariable int windowid,@PathVariable int canteenid){
+//        Dish dish = dishServlet.findbyid(id,windowid,canteenid);
+//        myLinkedList.addLast(dish);
+//        System.out.println(myLinkedList.toString());
+//        return "成功添加";
+//    }
 
-    public String show(){
-        return {idx,dish信息}
-    }
-    public String delete(){
-        通过前端传idx
-    }
+//    public String show(){
+//        return {idx,dish信息}
+//    }
+//    public String delete(){
+//        通过前端传idx
+//    }
 }

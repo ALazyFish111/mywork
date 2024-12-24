@@ -19,7 +19,7 @@
                         <select class="form-control" v-model="tmp.role" required>
                             <option value="" disabled>选择角色</option>
                             <option value="admin">管理员</option>
-                            <option value="student">学生</option>
+                            <option value="user">学生</option>
                         </select>
                     </div>
                     <button @click="click" type="submit" class="btn btn-danger w-100">注册</button>
@@ -60,9 +60,11 @@ const reForm = () => {
 const click = () => {
     check1();
     if (msg) {
+        console.log(tmp.username + ' ' + tmp.password + ' ' + tmp.role);
         userStore.user.password = tmp.password;
         userStore.user.username = tmp.username;
         userStore.user.role = tmp.role;
+        console.log(userStore.user);
         userStore.register();
     }
     reForm();

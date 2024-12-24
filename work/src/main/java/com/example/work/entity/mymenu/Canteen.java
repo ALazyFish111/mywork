@@ -16,5 +16,4 @@ public class Canteen {
     @TableId(type = IdType.AUTO)
     private Integer id;
     private String name;
-    private MyArrayList<CanteenWindow> windows;
 }

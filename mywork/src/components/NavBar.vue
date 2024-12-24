@@ -17,8 +17,14 @@
                     <li class="nav-item">
                         <router-link class="nav-link" :to="{ name: 'shop' }">外卖购物</router-link>
                     </li>
+                    <li v-if="userStore.user.role == 'admin'" class="nav-item">
+                        <router-link class="nav-link" :to="{ name: 'manage' }">信息管理</router-link>
+                    </li>
+                    <!-- <li v-if="userStore.user.role == 'admin'" class="nav-item">
+                        <router-link class="nav-link" :to="{ name: 'addmenu' }">菜品添加</router-link>
+                    </li> -->
                 </ul>
-                <ul class="navbar-nav">
+                <ul v-if="userStore.hasbeen == false" class="navbar-nav">
                     <li class="nav-item">
                         <router-link class="nav-link active" :to="{ name: 'login' }">登录</router-link>
                     </li>
@@ -28,15 +34,23 @@
                     <li class="nav-item">
                         <router-link class="nav-link active" :to="{ name: 'test' }">测试</router-link>
                     </li>
-                </ul>
 
+                </ul>
+                <ul v-if="userStore.hasbeen == true" class="list-group list-group-flush">
+                    <li class="list-group-item">名字：{{ userStore.user.username }}</li>
+                    <li class="list-group-item">身份: {{ userStore.user.role }}</li>
+                    <li class="list-group-item">
+                        <a @click="userStore.resetdata">注销</a>
+                    </li>
+                </ul>
             </div>
         </div>
     </nav>
 </template>
 
 <script setup>
-
+import { useUserStore } from '@/stores/user';
+const userStore = useUserStore();
 </script>
 
 <style scoped></style>

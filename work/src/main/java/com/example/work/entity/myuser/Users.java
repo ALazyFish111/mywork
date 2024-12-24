@@ -14,6 +14,6 @@ import lombok.NoArgsConstructor;
 @TableName("users")
 public class Users {
     @TableId(type = IdType.AUTO)
-    int id;
+    Integer id;
     String username,password,role;
 }

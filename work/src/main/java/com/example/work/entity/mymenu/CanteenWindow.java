@@ -17,5 +17,4 @@ public class CanteenWindow {
     private Integer id;
     private Integer canteenId;
     private String name;
-    private MyArrayList<Dish> dishes;
 }

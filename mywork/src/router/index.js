@@ -5,6 +5,7 @@ import RegisterView from '@/views/RegisterView.vue'
 import ShopView from '@/views/ShopView.vue'
 import LoginView from '@/views/LoginView.vue'
 import TestView from '@/views/TestView.vue'
+import ManageView from '@/views/ManageView.vue'
 
 const routes = [
   {
@@ -37,6 +38,12 @@ const routes = [
     name: 'test',
     component: TestView
   },
+  {
+    path: '/',
+    name: 'manage',
+    component: ManageView
+  },
+
 ]
 
 const router = createRouter({

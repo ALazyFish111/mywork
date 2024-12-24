@@ -4,27 +4,38 @@
             <div class="card-body">
 
 
-                <button @click="test" type="submit" class="btn btn-danger w-100">登录</button>
+                <button @click="click" type="submit" class="btn btn-danger w-100">登录</button>
             </div>
         </div>
+
+        <ul class="list-group">
+            <li v-for="(item, index) in dates" :key="index">
+                <p class="mb-1">菜名: {{ item.name }}</p>
+                <p class="mb-1">价格: {{ item.price }}</p>
+                <p class="mb-1">味道: {{ item.taste }}</p>
+                <p class="mb-1">饭堂: {{ item.carteenId }}</p>
+                <p class="mb-1">窗口: {{ item.windowId }}</p>
+
+            </li>
+        </ul>
     </ContentBase>
 </template>
 
 <script setup>
-// import apiClient from '@/services/api';
 import ContentBase from '@/components/ContentBase.vue';
-// import { reactive } from 'vue';
-import { useRouter } from 'vue-router';
-// const user = reactive({
-//     id: 0,
-//     username: 'exampleUsername',
-//     password: 'examplePassword',
-//     role: 'exampleRole'
-// });
-const router = useRouter();
-const test = () => {
-
-    router.push('/home');
+import axios from 'axios';
+import { ref } from 'vue';
+const dates = ref([]);
+const click = async () => {
+    try {
+        const response = await axios.post('http://localhost:3000/test1/01');
+        console.log(response);
+        dates.value = response.data;
+        console.log(dates);
+    } catch (error) {
+        console.log(error);
+        return false;
+    }
 }
 
 </script>
